@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Delegates
+﻿namespace Delegates
 {
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Windows.Forms;
+
     public partial class Form1 : Form
     {
-        public Form1 ( )
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", Justification = "Reviewed. Suppression is OK here.")]
+        public Form1()
         {
-            InitializeComponent ( );
+            this.InitializeComponent();
+        }
+
+        private void Form1Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
