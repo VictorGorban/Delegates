@@ -1,5 +1,6 @@
 ﻿namespace Delegates
 {
+    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Windows.Forms;
 
@@ -12,13 +13,15 @@
             this.InitializeComponent();
         }
 
-        private void counterBox1_TextChanged(object sender, System.EventArgs e)
+
+        private void Button1Click(object sender, System.EventArgs e)
         {
-            this.textBox1.Text = this.counterBox1.Text;
-            this.textBox2.Text = this.counterBox1.Counter.ToString();
+            var calc = new Calculator();
+            tbRes.Text = calc.PerformOperation(tbOp.Text, double.Parse(tbA.Text), double.Parse(tbB.Text)).ToString();
         }
         ////теперь надо сделать таки тот калькулятор. А затем уже делать шаблоны.
 
 
     }
+
 }

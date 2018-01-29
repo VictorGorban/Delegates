@@ -28,33 +28,75 @@
         /// </summary>
         private void InitializeComponent ( )
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.PerformOpButton = new System.Windows.Forms.Button();
+            this.tbA = new System.Windows.Forms.TextBox();
+            this.tbB = new System.Windows.Forms.TextBox();
+            this.tbOp = new System.Windows.Forms.TextBox();
+            this.tbRes = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // PerformOpButton
             // 
-            this.button1.Location = new System.Drawing.Point(102, 149);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Perform the operation";
-            this.button1.UseVisualStyleBackColor = true;
+            this.PerformOpButton.Location = new System.Drawing.Point(102, 195);
+            this.PerformOpButton.Name = "PerformOpButton";
+            this.PerformOpButton.Size = new System.Drawing.Size(106, 41);
+            this.PerformOpButton.TabIndex = 0;
+            this.PerformOpButton.Text = "Perform the operation";
+            this.PerformOpButton.UseVisualStyleBackColor = true;
+            this.PerformOpButton.Click += new System.EventHandler(this.Button1Click);
+            // 
+            // tbA
+            // 
+            this.tbA.Location = new System.Drawing.Point(102, 105);
+            this.tbA.Name = "tbA";
+            this.tbA.Size = new System.Drawing.Size(100, 20);
+            this.tbA.TabIndex = 1;
+            // 
+            // tbB
+            // 
+            this.tbB.Location = new System.Drawing.Point(102, 157);
+            this.tbB.Name = "tbB";
+            this.tbB.Size = new System.Drawing.Size(100, 20);
+            this.tbB.TabIndex = 2;
+            // 
+            // tbOp
+            // 
+            this.tbOp.Location = new System.Drawing.Point(102, 131);
+            this.tbOp.Name = "tbOp";
+            this.tbOp.Size = new System.Drawing.Size(100, 20);
+            this.tbOp.TabIndex = 3;
+            // 
+            // tbRes
+            // 
+            this.tbRes.Location = new System.Drawing.Point(102, 251);
+            this.tbRes.Name = "tbRes";
+            this.tbRes.Size = new System.Drawing.Size(100, 20);
+            this.tbRes.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 320);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tbRes);
+            this.Controls.Add(this.tbOp);
+            this.Controls.Add(this.tbB);
+            this.Controls.Add(this.tbA);
+            this.Controls.Add(this.PerformOpButton);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PerformOpButton;
+        private System.Windows.Forms.TextBox tbA;
+        private System.Windows.Forms.TextBox tbB;
+        private System.Windows.Forms.TextBox tbOp;
+        private System.Windows.Forms.TextBox tbRes;
     }
 }
 
