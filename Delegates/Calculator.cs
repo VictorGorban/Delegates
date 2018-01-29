@@ -7,33 +7,39 @@
 
     public sealed class Calculator
     {
-        private readonly Dictionary <string, Operation> operations = new Dictionary <string, Operation>
-                                                                         {
-                                                                             ["+"] = Calculator.DoAddition,
-                                                                             ["-"] = Calculator.DoSubtraction,
-                                                                             ["*"] = Calculator.DoMultiplication,
-                                                                             ["/"] = Calculator.DoDivision
-                                                                         };
+        private readonly Dictionary <string, Operation> operations;
 
-        // public Calculator() { }
+        public Calculator()
+        {
+            operations = new Dictionary <string, Operation>
+                             {
+                                 ["+"] = delegate(double a, double b) { return a + b;},//инициализация делегата анонимным методом.
+                                 ["-"] = (double a, double b) =>  { return a - b; },//лямбда, которая указывает на анонимный метод. Ненужное указание типа.
+                                 ["*"] = (a, b) => { return a - b; },//лямбда, также указывает на анонимный метод.
+                                 ["/"] = (a,b) => DoDivision(a,b), // лямбда, указывающая на неанонимный метод.
+                                 ["%"] = (a,b) => a % b //лямбда в "привычном" виде. 
+                                 // Cyclomatic complexity говорит, что это все равно анонимный метод. Ну что ж, возможно, лямбды - это синтаксический сахар для анонимный методов.
+                             };
+        }
+
         public delegate double Operation(double number1, double number2);
 
-        public static double DoAddition(double number1, double number2)
+        public double DoAddition(double number1, double number2)
         {
             return number1 + number2;
         }
 
-        public static double DoSubtraction(double number1, double number2)
+        public double DoSubtraction(double number1, double number2)
         {
             return number1 - number2;
         }
 
-        public static double DoMultiplication(double number1, double number2)
+        public double DoMultiplication(double number1, double number2)
         {
             return number1 * number2;
         }
 
-        public static double DoDivision(double number1, double number2)
+        public double DoDivision(double number1, double number2)
         {
             return number1 / number2;
         }
@@ -50,6 +56,7 @@
             }
 
             res = operations[op].Invoke(a, b);
+            res = operations[op](a, b); // сокращенная запись для предыдущей строки. Логично, мы же активируем делегат, который оболочка над функциями.
             return true;
         }
 
@@ -82,9 +89,20 @@
                 throw new ArgumentNullException(nameof(op));
             }
 
-
-
-            return 0;
+            ////Свитч, привет
+            switch (op)
+            {
+                case "+":
+                    return DoAddition(a, b);
+                case "-":
+                    return DoSubtraction(a, b);
+                case "*":
+                    return DoMultiplication(a, b);
+                case "/":
+                    return DoDivision(a, b);
+                default:
+                    throw new ArithmeticException("Operation "+op+" is invalid");
+            }
         }
 
         public void DefineOperation1(string op, Func <double, double, double> body)

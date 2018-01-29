@@ -51,6 +51,7 @@
             this.tbA.Name = "tbA";
             this.tbA.Size = new System.Drawing.Size(100, 20);
             this.tbA.TabIndex = 1;
+            this.tbA.Text = "0";
             // 
             // tbB
             // 
@@ -58,6 +59,7 @@
             this.tbB.Name = "tbB";
             this.tbB.Size = new System.Drawing.Size(100, 20);
             this.tbB.TabIndex = 2;
+            this.tbB.Text = "0";
             // 
             // tbOp
             // 
@@ -65,6 +67,7 @@
             this.tbOp.Name = "tbOp";
             this.tbOp.Size = new System.Drawing.Size(100, 20);
             this.tbOp.TabIndex = 3;
+            this.tbOp.Text = "+";
             // 
             // tbRes
             // 
@@ -72,12 +75,13 @@
             this.tbRes.Name = "tbRes";
             this.tbRes.Size = new System.Drawing.Size(100, 20);
             this.tbRes.TabIndex = 4;
+            this.tbRes.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 320);
+            this.ClientSize = new System.Drawing.Size(599, 440);
             this.Controls.Add(this.tbRes);
             this.Controls.Add(this.tbOp);
             this.Controls.Add(this.tbB);
