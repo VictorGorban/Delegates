@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Dele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControls", "..\UserControls\UserControls.csproj", "{33F81A56-29C8-4398-BDE1-05CA86687EAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{4E7EB804-BBA4-4FD3-BBD4-3D4C6934ACCF}"
-	ProjectSection(ProjectDependencies) = postProject
-		{33F81A56-29C8-4398-BDE1-05CA86687EAB} = {33F81A56-29C8-4398-BDE1-05CA86687EAB}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,10 +21,6 @@ Global
 		{33F81A56-29C8-4398-BDE1-05CA86687EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33F81A56-29C8-4398-BDE1-05CA86687EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33F81A56-29C8-4398-BDE1-05CA86687EAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E7EB804-BBA4-4FD3-BBD4-3D4C6934ACCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E7EB804-BBA4-4FD3-BBD4-3D4C6934ACCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E7EB804-BBA4-4FD3-BBD4-3D4C6934ACCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E7EB804-BBA4-4FD3-BBD4-3D4C6934ACCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
